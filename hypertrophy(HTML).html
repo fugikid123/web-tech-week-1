@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Hypertrophy Principles - HTML only</title>
+    <style>
+        /* Minimal CSS to fix touch targets and spacing for accessibility */
+        button, input, select, textarea, a {
+            min-height: 44px; /* Minimum touch target size */
+            min-width: 44px;
+            margin: 10px 0;
+            display: inline-block;
+        }
+        nav a {
+            padding: 10px 15px;
+            margin: 0 5px;
+        }
+        form p {
+            margin-bottom: 20px;
+        }
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+    </style>
 </head>
 <body>
 
@@ -12,10 +33,10 @@
         <h1>Foundations of Muscle Growth</h1>
         <p>Master these three pillars to maximize your hypertrophy potential.</p>
         <hr>
-        <nav>
+        <nav aria-label="Main Navigation">
             <p>
-                <a href="index.html">Home</a> | 
-                <a href="#principles">Principles</a> | 
+                <a href="index.html">Home</a>
+                <a href="#principles">Principles</a>
                 <a href="#join">Join Now</a>
             </p>
         </nav>
@@ -27,7 +48,7 @@
             <h2>Core Principles</h2>
 
             <h3>1. Progressive Overload</h3>
-            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=300" alt="Dumbbells">
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=300" alt="Increasing weight on dumbbells representing progressive overload">
             <p>The gradual increase of stress placed upon the body during exercise.</p>
             <ul>
                 <li>Increase weight</li>
@@ -37,12 +58,12 @@
             </ul>
 
             <h3>2. Full Range of Motion (ROM)</h3>
-            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=300" alt="Squatting">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=300" alt="Athlete performing a deep squat for full range of motion">
             <p>Performing an exercise through the entire movement potential of a joint.</p>
             <p><strong>Key benefit:</strong> Training at longer muscle lengths is superior for hypertrophy.</p>
 
             <h3>3. Controlling the Movement</h3>
-            <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=300" alt="Bicep Curl">
+            <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=300" alt="Close-up of a controlled bicep contraction">
             <p>Focusing on the eccentric (lowering) phase and avoiding the use of momentum.</p>
             <p><strong>Goal:</strong> Maximize time under tension.</p>
         </section>
@@ -56,12 +77,12 @@
             <form action="#" method="POST">
                 <p>
                     <label for="name">Full Name:</label><br>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
                 </p>
                 
                 <p>
                     <label for="email">Email Address:</label><br>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" required placeholder="example@email.com">
                 </p>
                 
                 <p>
@@ -82,12 +103,12 @@
 
                 <p>
                     <label for="comments">Additional Goals:</label><br>
-                    <textarea id="comments" name="comments" rows="4" cols="30"></textarea>
+                    <textarea id="comments" name="comments" rows="4" cols="30" placeholder="Tell us about your goals"></textarea>
                 </p>
 
                 <p>
-                    <button type="submit">Submit Information</button>
-                    <button type="reset">Clear Form</button>
+                    <button type="submit" aria-label="Submit Information Form">Submit Information</button>
+                    <button type="reset" aria-label="Reset Form Fields">Clear Form</button>
                 </p>
             </form>
         </section>
