@@ -72,6 +72,7 @@
             <li><a href="hypertrophy(HTML).html">Task 1 (Web)</a></li>
             <li><a href="#task-manager">Task Manager</a></li>
             <li><a href="#dynamic-form">Form Validation</a></li>
+            <li><a href="#api-integration">API Integration</a></li>
         </ul>
     </nav>
 
@@ -145,6 +146,70 @@
 
                     <button type="submit" class="btn-primary" style="width: 100%;">Register</button>
                 </form>
+            </div>
+        </section>
+
+        <!-- Task 3: API Integration (Async/Await) -->
+        <section id="api-integration">
+            <h2>Task 3: API Integration (Async/Await)</h2>
+            
+            <!-- Create Post Form (Hidden by default) -->
+            <div id="post-form-container" class="card hidden">
+                <h3 id="form-title">Create New Post</h3>
+                <form id="post-form">
+                    <input type="hidden" id="post-id">
+                    <div class="input-group">
+                        <label for="post-title">Title</label>
+                        <input type="text" id="post-title" required placeholder="Post title">
+                    </div>
+                    <div class="input-group">
+                        <label for="post-body">Content</label>
+                        <textarea id="post-body" rows="3" required placeholder="What's on your mind?"></textarea>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button type="submit" class="btn-primary">Save Post</button>
+                        <button type="button" id="cancel-post-btn" class="btn-secondary">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card">
+                <div class="api-controls">
+                    <div class="search-container">
+                        <input type="text" id="post-search" placeholder="Search posts by title...">
+                    </div>
+                    <button id="fetch-posts-btn" class="btn-primary">Fetch Posts</button>
+                    <button id="show-post-form-btn" class="btn-secondary">Create Post</button>
+                </div>
+
+                <!-- Loading Spinner -->
+                <div id="loading-spinner" class="spinner hidden"></div>
+
+                <!-- Error Message -->
+                <div id="error-container" class="hidden" style="color: var(--accent-red); padding: 1rem; text-align: center; border: 1px solid var(--accent-red); border-radius: 8px; margin-bottom: 1.5rem;">
+                    <p id="error-message"></p>
+                </div>
+
+                <!-- Posts Container -->
+                <div id="posts-container">
+                    <!-- Posts will be rendered here -->
+                    <p style="text-align: center; color: var(--text-dim); grid-column: 1 / -1;">Click "Fetch Posts" to load data from JSONPlaceholder API.</p>
+                </div>
+
+                <!-- Pagination -->
+                <div id="pagination-container" class="pagination hidden">
+                    <!-- Pagination buttons will be rendered here -->
+                </div>
+            </div>
+
+            <!-- Part 2: DummyJSON API -->
+            <div class="card" style="text-align: center;">
+                <h3>Part 2: Random Inspiration (DummyJSON API)</h3>
+                <div id="quote-container" style="margin: 1.5rem 0;">
+                    <p id="quote-text" style="font-style: italic; font-size: 1.2rem; color: var(--text-main);">"Click the button to get inspired."</p>
+                    <p id="quote-author" style="color: var(--accent-red); font-weight: bold; margin-top: 0.5rem;"></p>
+                </div>
+                <button id="fetch-quote-btn" class="btn-secondary">Get Random Quote</button>
             </div>
         </section>
     </main>

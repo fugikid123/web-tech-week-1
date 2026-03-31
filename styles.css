@@ -339,7 +339,130 @@ button {
   color: var(--accent-red);
   background: rgba(225, 29, 72, 0.07);
 }
-.btn-secondary { background: #333; color: white; margin-left: 0.5rem; }
+.btn-secondary { background: #333; color: white; margin-left: 0; }
+.btn-primary { background: var(--accent-red); color: white; }
+.btn-primary:hover { background: var(--accent-red-hover); }
+
+/* --- API Section Styles --- */
+.api-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.search-container {
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+#posts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    min-height: 200px;
+}
+
+.post-card {
+    background: var(--card-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.post-card:hover {
+    border-color: var(--accent-red);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(225, 29, 72, 0.1);
+}
+
+.post-card h3 {
+    margin-top: 0;
+    color: var(--accent-red);
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.post-card p {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    flex-grow: 1;
+}
+
+.post-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn-small {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+}
+
+.btn-danger {
+    background: #991b1b;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #7f1d1d;
+}
+
+/* Loading Spinner */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(225, 29, 72, 0.1);
+    border-left-color: var(--accent-red);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.page-btn {
+    background: #111;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.page-btn.active {
+    background: var(--accent-red);
+    border-color: var(--accent-red);
+}
+
+.page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Post Form Modal-like (simplified as a card for now) */
+#post-form-container {
+    margin-bottom: 2rem;
+}
+
+.hidden {
+    display: none !important;
+}
 
 /* --- Footer --- */
 footer {
